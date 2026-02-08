@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color : #411141;">
+
+    <button>view</button>
+    <div class="hiteshsir"></div>
+
+</body>
+<script>
+    const url = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest();
+    xhr.open("get", url);
+    // console.log("ayush");
+   const uwu=  xhr.onreadystatechange = function(){
+        //const data = xhr.responseText;
+        // so most of the time data from the api response comes in string 
+        // console.log(typeof data);
+        
+        // console.log(data.twitter_username);
+        // so we need to change its data type to object or json
+        const data = JSON.parse(this.responseText)
+        console.log(typeof data);
+        console.log(data);
+        
+
+        
+
+        }
+    
+    
+    
+    xhr.send()
+
+
+
+</script>
+</html>

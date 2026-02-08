@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141;">
+    <div class="hiteshpic"></div>
+    <button class="button">view</button>
+</body>
+<script>
+const url = "https://api.github.com/users/hiteshchoudhary"
+const xhr = new XMLHttpRequest();
+const button = document.querySelector(".button")
+const image = document.querySelector(".hiteshpic")
+xhr.open("GET", url)
+xhr.onreadystatechange =  function(){
+    if(xhr.readyState===4) {
+        const data =  JSON.parse(xhr.responseText);
+        button.addEventListener("click",function(){
+            setTimeout(function(){
+                image.innerHTML = `    <img src="https://avatars.githubusercontent.com/u/11613311?v=4" alt="">`
+ 
+            },1000)
+        })
+        
+
+    }
+ 
+    
+    
+
+
+    
+    
+}
+
+
+xhr.send();
+
+    
+
+
+</script>
+</html>

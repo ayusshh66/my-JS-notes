@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color :antiquewhite">
+    <div>
+        <ul class="akku">
+            <li>navyug</li>
+
+        </ul>
+    </div>
+</body>
+<script>
+// in this method we traverse the whole tree that is not optimistic
+function addschools(school_name){
+    const list = document.createElement("li");
+    list.innerText = `${school_name}`
+    document.querySelector(".akku").appendChild(list)
+}
+addschools("satyasai")
+
+
+
+// we can apply an another optimistic way i.e
+function addoptischool_name(name){
+    const listu = document.createElement("li");
+    listu.appendChild(document.createTextNode(name));
+    document.querySelector(".akku").appendChild(listu)
+    
+
+}
+
+// arrow
+((name) =>{
+    const list = document.createElement("li");
+    list.appendChild(document.createTextNode(name));
+    const result =  document.querySelector(".akku").appendChild(list)
+    return result
+
+})("gov")
+
+
+addoptischool_name("sose")
+
+const second_item = document.querySelector("li:nth-child(2)");
+second_item.innerText = "DAV SCHOOL"
+// methond 2 optimistic
+const new_li = document.createElement("li");
+new_li.textContent = "dove school"
+second_item.replaceWith(new_li)
+//methond 3 
+const first_item = document.querySelector("li:first-child")
+first_item.outerHTML = "<li> none </li>"
+// removing element
+const last_item_removed =  document.querySelector("li:last-child")
+last_item_removed.remove()
+
+
+
+</script>
+</html>
